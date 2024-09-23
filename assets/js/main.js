@@ -1,12 +1,34 @@
-console.log(
-  '%c Proudly Crafted with ZiOn.',
-  'background: #222; color: #bada55'
-);
-
 /* ---------------------------------------------- /*
 * Preloader
 /* ---------------------------------------------- */
 (function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    // Функция для смены языка
+    function changeLanguage(lang) {
+      fetch(`/assets/lang/${lang}.json`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Для каждого элемента с атрибутом data-lang
+          document.querySelectorAll('[data-lang]').forEach((el) => {
+            const key = el.getAttribute('data-lang');
+            if (data[key]) {
+              el.textContent = data[key];
+            }
+          });
+        })
+        .catch((error) => console.error('Ошибка загрузки языка:', error));
+    }
+
+    // Обработка кликов на элементы выбора языка
+    document.querySelectorAll('.dropdown-menu a').forEach((langLink) => {
+      langLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        const lang = this.getAttribute('href').split('#')[1]; // Получаем код языка (ru, uz, en)
+        changeLanguage(lang);
+      });
+    });
+  });
+
   // Инициализация маски для элемента
   const phoneInput = document.getElementById('phone');
   const maskOptions = {
