@@ -1,11 +1,14 @@
+import { config } from './config.js'
+
+
 function sendMessageToTelegram(message) {
-    const botToken = '7143976495:AAG34SkJURU4kMgdU3bvmXlzIvgRectCCUk'; 
-    const chatId = '88938160';
+    const botToken = config.TG_TOKEN; 
+    const chatId = config.CHAT_ID;
     
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
   
     const data = {
-      chat_id: chatId,
+      chat_id: chatId[0],
       text: message
     };
   

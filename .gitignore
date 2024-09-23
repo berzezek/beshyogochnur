@@ -70,3 +70,5 @@ desktop.ini
 npm-cache/
 *.exe
 *.lnk
+
+.env
