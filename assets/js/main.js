@@ -2,7 +2,33 @@
 * Preloader
 /* ---------------------------------------------- */
 (function () {
+  function getCookie(name) {
+    const nameEQ = name + '=';
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  function setCookie(name, value, days) {
+    let expires = '';
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+      expires = '; expires=' + date.toUTCString();
+    }
+    document.cookie = name + '=' + (value || '') + expires + '; path=/';
+  }
   document.addEventListener('DOMContentLoaded', function () {
+    const site_lang = getCookie('lang');
+    if (!site_lang) {
+      document.documentElement.setAttribute('lang', 'uz');
+    } else {
+      document.documentElement.setAttribute('lang', site_lang);
+    }
     // Функция для смены языка
     function changeLanguage(lang) {
       fetch(`/assets/lang/${lang}.json`)
@@ -15,6 +41,14 @@
               el.textContent = data[key];
             }
           });
+
+          // Для каждого элемента с атрибутом data-placeholder
+          document.querySelectorAll('[data-placeholder]').forEach((el) => {
+            const key = el.getAttribute('data-placeholder');
+            if (data[key]) {
+              el.setAttribute('placeholder', data[key]);
+            }
+          });
         })
         .catch((error) => console.error('Ошибка загрузки языка:', error));
     }
@@ -25,8 +59,20 @@
         event.preventDefault();
         const lang = this.getAttribute('href').split('#')[1]; // Получаем код языка (ru, uz, en)
         changeLanguage(lang);
+        setCookie('lang', lang, 365);
+        document.documentElement.setAttribute('lang', lang);
       });
     });
+    function checkCookieAndRedirect() {
+      const cookieValue = getCookie('lang');
+      if (cookieValue) {
+        changeLanguage(cookieValue);
+      } else {
+        changeLanguage('uz');
+      }
+    }
+
+    checkCookieAndRedirect();
   });
 
   // Инициализация маски для элемента

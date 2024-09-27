@@ -1,6 +1,3 @@
-import { config } from './config.js'
-
-
 function sendMessageToTelegram(message) {
     const botToken = config.TG_TOKEN; 
     const chatId = config.CHAT_ID;
