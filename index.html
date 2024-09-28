@@ -180,7 +180,8 @@
             <div class="col-sm-12">
               <div class="video-box">
                 <div class="video-box-icon"><a class="video-pop-up"
-                    href="https://www.youtube.com/watch?v=IEvEO5uiyqA&themeRefresh=1"><span class="icon-video"></span></a></div>
+                    href="https://www.youtube.com/watch?v=IEvEO5uiyqA&themeRefresh=1"><span
+                      class="icon-video"></span></a></div>
                 <div class="video-title font-alt" data-lang="video_title">Презентация</div>
                 <div class="video-subtitle font-alt" data-lang="video_subtitle">Посмотрите видео нашей продукции</div>
               </div>
@@ -272,6 +273,13 @@
       </footer>
     </div>
     <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    <!-- <div id="app">
+      <div v-if="error">{{ error }}</div>
+      <ul v-if="catalogData.length > 0">
+        <li v-for="item in catalogData" :key="item.id">{{ item.name }}<br/><img :src="item.image" @click="fetchProducts(item.slug)"/></li>
+      </ul>
+      <div v-else>Loading...</div>
+    </div> -->
   </main>
   <!--  
     JavaScripts
@@ -293,6 +301,7 @@
   <script src="assets/js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dotenv@16.4.5/lib/main.min.js"></script>
   <script src="https://unpkg.com/imask"></script>
+  <script src="assets/js/catalog.js" type="module"></script>
   <script src="assets/js/loader.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/sendMessage.js"></script>
