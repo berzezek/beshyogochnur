@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="page-loader" v-if="!catalogsLoaded">
+    <div class="page-loader" v-if="pending">
       <div class="loader">Loading...</div>
     </div>
     <div v-else>
@@ -37,22 +37,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import type { ICatalog } from '~/types/catalog' // Импорт типа с помощью import type
 const runtimeConfig = useRuntimeConfig()
 const router = useRouter()
 
-const catalogs = ref<ICatalog[]>([])
-const catalogsLoaded = ref(false)
 
-const { data, pending, error } = await useFetch<ICatalog[]>(`${runtimeConfig.public.apiBase}catalog/`)
+const { data: catalogs, pending, error } = await useFetch<ICatalog[]>(`${runtimeConfig.public.apiBase}catalog/`)
 
 const catalogList = async(slug: string) => {
   router.push(`/catalog/${slug}`)
 }
 
-if (data.value) {
-  catalogs.value = data.value
-  catalogsLoaded.value = true
-}
 </script>
