@@ -7,9 +7,8 @@
 						<div class="video-box-icon"><a class="video-pop-up"
 								href="https://www.youtube.com/watch?v=IEvEO5uiyqA&themeRefresh=1"><span class="icon-video"></span></a>
 						</div>
-						<div class="video-title font-alt" data-lang="video_title">Презентация</div>
-						<div class="video-subtitle font-alt" data-lang="video_subtitle">Посмотрите видео нашей
-							продукции</div>
+						<div class="video-title font-alt">{{ $t('video_title') }}</div>
+						<div class="video-subtitle font-alt">{{ $t('video_subtitle') }}</div>
 					</div>
 				</div>
 			</div>

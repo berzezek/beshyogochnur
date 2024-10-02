@@ -8,7 +8,7 @@
 
     <main-service />
 
-    <main-presentation />
+    <!-- <main-presentation /> -->
 
     <contact-form />
 

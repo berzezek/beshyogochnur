@@ -1,53 +1,39 @@
 <template>
-  <section class="module" id="services">
+  <section class="module bg-primary" id="services">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-sm-offset-3">
-          <h2 class="module-title font-alt" data-lang="services_title">Услуги</h2>
-          <div class="module-subtitle font-serif" data-lang="services_intro">Компания Beshyogochnur
-            предлагает
-            широкий спектр профессиональных услуг в области солнечной энергетики, охватывающий все
-            этапы работы с
-            солнечными системами — от проектирования до обслуживания.</div>
+          <h2 class="module-title font-alt">{{ $t('services_title') }}</h2>
+          <div class="module-subtitle font-serif">{{ $t('services_intro') }}</div>
         </div>
       </div>
       <div class="row multi-columns-row">
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="features-item">
             <div class="features-icon"><span class="icon-lightbulb"></span></div>
-            <h3 class="features-title font-alt" data-lang="service_1_title">Энергосервис</h3>
-            <p data-lang="service_1_desc">Мы предлагаем комплексное обслуживание и поддержку
-              солнечных
-              энергетических систем, включая мониторинг, техническое обслуживание, ремонт и
-              модернизацию
-              оборудования.</p>
+            <h3 class="features-title font-alt">{{ $t('service_1_title') }}</h3>
+            <p>{{ $t('service_1_desc') }}</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="features-item">
             <div class="features-icon"><span class="icon-tools"></span></div>
-            <h3 class="features-title font-alt" data-lang="service_2_title">Проектирование</h3>
-            <p data-lang="service_2_desc">Создание индивидуальных проектов солнечных электростанций
-              для частных и
-              коммерческих объектов.</p>
+            <h3 class="features-title font-alt">{{ $t('service_2_title') }}</h3>
+            <p>{{ $t('service_2_desc') }}</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="features-item">
             <div class="features-icon"><span class="icon-gears"></span></div>
-            <h3 class="features-title font-alt" data-lang="service_3_title">Аренда СЭС</h3>
-            <p data-lang="service_3_desc">Мы предоставляем солнечные электростанции в аренду для
-              частных
-              домовладельцев и бизнеса.</p>
+            <h3 class="features-title font-alt">{{ $t('service_3_title') }}</h3>
+            <p>{{ $t('service_3_desc') }}</p>
           </div>
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="features-item">
             <div class="features-icon"><span class="icon-lifesaver"></span></div>
-            <h3 class="features-title font-alt" data-lang="service_4_title">Энергоконсалтинг</h3>
-            <p data-lang="service_4_desc">Профессиональные консультации по вопросам использования
-              солнечной энергии
-              для вашего объекта.</p>
+            <h3 class="features-title font-alt">{{ $t('service_4_title') }}</h3>
+            <p>{{ $t('service_4_desc') }}</p>
           </div>
         </div>
       </div>

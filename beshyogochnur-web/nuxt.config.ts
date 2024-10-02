@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: ['@nuxtjs/i18n'],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   runtimeConfig: {
@@ -9,9 +10,10 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
-
     head: {
       title: 'Beshyogochnur',
+      charset: 'utf-8',
+      viewport: 'width=device-width, initial-scale=1',
       link: [
         { rel: 'icon', type: 'image/png', href: '/images/solar/favicon.jpg' },
         {
@@ -103,5 +105,13 @@ export default defineNuxtConfig({
         { src: '/alertifyjs/alertify.min.js' },
       ],
     },
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
+    detectBrowserLanguage: {
+      useCookie: true,
+      alwaysRedirect: false,
+      fallbackLocale: 'ru'
+    }
   },
 });

@@ -13,8 +13,7 @@
           </div>
           <div class="row mb-20">
             <div class="col-sm-12">
-              <div class="price font-alt"><span class="amount">{{ product.price }} <span
-                    data-lang="currency">Сум</span></span></div>
+              <div class="price font-alt"><span class="amount">{{ product.price }} {{ $t('currency') }}</span></div>
             </div>
           </div>
           <div class="row mb-20">
@@ -25,7 +24,7 @@
             </div>
           </div>
           <div class="row mb-20">
-            <div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b">Заказать сейчас</a></div>
+            <div class="col-sm-8"><a class="btn btn-lg btn-block btn-round btn-b">{{ $t('order_now') }}</a></div>
           </div>
         </div>
       </div>
