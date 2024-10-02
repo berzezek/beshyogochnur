@@ -17,6 +17,6 @@
       <hr class="divider-d">
       <main-footer />
     </div>
-    <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+    <div class="scroll-up"><nuxt-link to="/#main"><i class="fa fa-angle-double-up"></i></nuxt-link></div>
   </main>
 </template>
