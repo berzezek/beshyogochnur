@@ -1,11 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   modules: ['@nuxtjs/i18n'],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_API_BASE,
+      telegramToken: process.env.NUXT_TELEGRAM_TOKEN,
+      chatId: process.env.NUXT_CHAT_ID
     },
   },
   app: {

@@ -10,16 +10,20 @@
               <!-- <div class="module-subtitle font-serif">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</div> -->
             </div>
           </div>
-          <div class="row"></div>
-          <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" v-for="product in products" :key="product.name">
-            <div class="team-item" @click="productDetail(product.slug)">
-              <div class="team-image"><img :src="product.image" :alt="product.name" />
-              </div>
-              <div class="team-descr font-alt">
-                <div class="team-name">{{ product.name }}</div>
-                <div class="team-role">{{ product.price }} {{ $t('currency') }}</div>
+          <div class="row">
+            <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" v-for="product in products" :key="product.name">
+              <div class="team-item" @click="productDetail(product.slug)">
+                <div class="team-image"><img :src="product.image" :alt="product.name" />
+                </div>
+                <div class="team-descr font-alt">
+                  <div class="team-name">{{ product.name }}</div>
+                  <div class="team-role">{{ product.price }} {{ $t('currency') }}</div>
+                </div>
               </div>
             </div>
+          </div>
+          <div class="mt-20">
+            <a @click="navigateTo('/catalog')" class="btn btn-b mb-4">{{ $t('back') }}</a>
           </div>
         </div>
       </section>

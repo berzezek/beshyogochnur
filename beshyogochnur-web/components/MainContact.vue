@@ -6,7 +6,7 @@
           <div class="widget">
             <h5 class="widget-title font-alt">{{ $t('company_name_1') }}  </h5>
             <p>{{ $t('address') }}</p>
-            <p>{{ $t('phone') }}</p>
+            <p>{{ $t('phone') }} +998 (90) 099 30 45</p>
             <p>Email: <a href="#"> info@beshyogochnur.uz</a></p>
           </div>
         </div>
