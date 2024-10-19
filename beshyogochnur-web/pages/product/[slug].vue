@@ -41,7 +41,7 @@
     </div>
     <div v-if="isModalOpen" class="modal-overlay" @click.self="toggleModal">
       <div class="modal-content">
-        <contact-form @sendMess="sendMess" />
+        <contact-form @sendMess="sendMess" id="sendMess" />
       </div>
     </div>
   </section>
@@ -53,6 +53,7 @@ import type { Product } from '~/types/apiResponse';
 import type { IFormData } from '~/types/formData';
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
+const router = useRouter();
 const lang = useCookie('lang');
 
 const product = ref<Product>();
@@ -81,6 +82,9 @@ await fetchProduct();
 const isModalOpen = ref(false);
 const toggleModal = () => {
   isModalOpen.value = !isModalOpen.value;
+  if (isModalOpen.value) {
+    router.push('#sendMess');
+  }
 };
 
 

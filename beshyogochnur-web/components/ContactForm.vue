@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
               <textarea class="form-control" rows="7" id="message" name="message" v-model="formData.message"
-                :placeholder="$t('message_placeholder')" :required="true"
+                :placeholder="$t('message_placeholder')"
                 :data-validation-required-message="$t('validation_required_message')"></textarea>
               <p class="help-block text-danger"></p>
             </div>
