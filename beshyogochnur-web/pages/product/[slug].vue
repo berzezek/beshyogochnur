@@ -63,19 +63,32 @@ const toggleModal = () => {
   isModalOpen.value = !isModalOpen.value;
 };
 
+const chatIds = runtimeConfig.public.chatId.split(',');
+
 const sendMess = async (formData: IFormData) => {
   try {
     productMess.value = product.value;
     const message = `Информация о заказе:\n\tИмя: ${formData.userName}\n\tEmail: ${formData.email}\n\tТелефон: ${formData.phone}\n\tСообщение: ${formData.message}\n\tПродукт: ${productMess.value && productMess.value.name ? productMess.value.name : ''}`;
 
-    await fetch(`https://api.telegram.org/bot${runtimeConfig.public.telegramToken}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: runtimeConfig.public.chatId,
-        text: message,
-      }),
-    });
+    for (let i = 0; i < chatIds.length; i++) {
+      const response = await fetch(`https://api.telegram.org/bot${runtimeConfig.public.telegramToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatIds[i],
+          text: message,
+        }),
+      });
+      // Проверка успешности ответа
+      if (!response.ok) {
+        const errorData = await response.json();
+        return {
+          status: 'error',
+          message: 'Failed to send message',
+          error: errorData,
+        };
+      }
+    }
   } catch (error) {
     return {
       status: 'error',

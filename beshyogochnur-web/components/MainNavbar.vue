@@ -14,7 +14,7 @@
           <li><nuxt-link to="/#services">{{ $t('services') }}</nuxt-link></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">{{ $t('products') }}</a>
             <ul class="dropdown-menu">
-              <li><nuxt-link @click="navigateTo(`/catalog/${catalog.slug}`)" v-for="catalog in catalogs"
+              <li><nuxt-link @click="navigateTo(`/catalog/${catalog.slug}`)" v-for="catalog in catalogs?.results"
                   :key="catalog.name">{{ catalog.name }}</nuxt-link></li>
             </ul>
           </li>
@@ -40,11 +40,13 @@
 </template>
 
 <script lang="ts" setup>
-import type { ICatalog } from '~/types/catalog' // Импорт типа с помощью import type
+import type { ICatalog } from '~/types/apiResponse' // Импорт типа с помощью import type
 const runtimeConfig = useRuntimeConfig()
 
 const { setLocale, locales } = useI18n()
 
-const { data: catalogs, pending, error } = await useFetch<ICatalog[]>(`${runtimeConfig.public.apiBase}catalog/`)
+const lang = useCookie('lang')
+
+const { data: catalogs, pending, error } = await useFetch<ICatalog>(`${runtimeConfig.public.apiBase}catalogs/?${lang.value ? `lang=${lang.value}` : 'lang=uz'}`)
 
 </script>

@@ -11,7 +11,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" v-for="product in products" :key="product.name">
+            <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" v-for="product in products?.results" :key="product.name">
               <div class="team-item" @click="productDetail(product.slug)">
                 <div class="team-image"><img :src="product.image" :alt="product.name" />
                 </div>
@@ -32,13 +32,15 @@
 </template>
 
 <script lang="ts" setup>
-import type { IProduct } from '~/types/product';
+import type { IProduct } from '~/types/apiResponse' // Импорт типа с помощью import type;
 
 const runtimeConfig = useRuntimeConfig()
 const route = useRoute()
 const router = useRouter()
 
-const { data: products, pending, error } = await useFetch<IProduct[]>(`${runtimeConfig.public.apiBase}catalog/${route.params.slug}/`)
+const lang = useCookie('lang')
+
+const { data: products, pending, error } = await useFetch<IProduct>(`${runtimeConfig.public.apiBase}catalogs/${route.params.slug}/?${lang.value ? `lang=${lang.value}` : 'lang=uz'}`)
 
 const productDetail = async (slug: string) => {
   router.push(`/product/${slug}`)

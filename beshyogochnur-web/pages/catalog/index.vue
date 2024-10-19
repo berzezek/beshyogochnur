@@ -10,7 +10,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" v-for="catalog in catalogs" :key="catalog.name">
+            <div class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3" v-for="catalog in catalogs?.results" :key="catalog.name">
               <div class="team-item" @click="catalogList(catalog.slug)">
                 <div class="team-image"><img :src="catalog.image" :alt="catalog.name" />
                 </div>
@@ -28,12 +28,12 @@
 </template>
 
 <script lang="ts" setup>
-import type { ICatalog } from '~/types/catalog' // Импорт типа с помощью import type
+import type { ICatalog } from '~/types/apiResponse'
 const runtimeConfig = useRuntimeConfig()
 const router = useRouter()
+const lang = useCookie('lang')
 
-
-const { data: catalogs, pending, error } = await useFetch<ICatalog[]>(`${runtimeConfig.public.apiBase}catalog/`)
+const { data: catalogs, pending, error } = await useFetch<ICatalog>(`${runtimeConfig.public.apiBase}catalogs/?${lang.value ? `lang=${lang.value}` : 'lang=uz'}`)
 
 const catalogList = async (slug: string) => {
   router.push(`/catalog/${slug}`)

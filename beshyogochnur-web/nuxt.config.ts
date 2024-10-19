@@ -1,5 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  nitro: {
+    preset: 'static',
+    routeRules: {
+      '/**': {
+        headers: {
+          'Cache-Control':
+            'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+          Pragma: 'no-cache',
+          Expires: '0',
+        },
+      },
+    },
+  },
   ssr: true,
   modules: ['@nuxtjs/i18n'],
   compatibilityDate: '2024-04-03',
@@ -8,7 +21,7 @@ export default defineNuxtConfig({
     public: {
       apiBase: process.env.NUXT_API_BASE,
       telegramToken: process.env.NUXT_TELEGRAM_TOKEN,
-      chatId: process.env.NUXT_CHAT_ID
+      chatId: process.env.NUXT_CHAT_ID,
     },
   },
   app: {
@@ -114,7 +127,9 @@ export default defineNuxtConfig({
     detectBrowserLanguage: {
       useCookie: true,
       alwaysRedirect: false,
-      fallbackLocale: 'ru'
-    }
+      fallbackLocale: 'uz',
+      redirectOn: 'root',
+      cookieKey: 'lang',
+    },
   },
 });

@@ -7,7 +7,7 @@
 
       <hr class="divider-w mb-4">
 
-      <slot />
+      <slot name="default" />
 
       <hr class="divider-w">
 
