@@ -1,44 +1,44 @@
 <template>
   <section class="module">
     <main-loader v-if="pending" />
-    <div class="container" v-if="product">
+    <div class="container" v-if="product && !pending">
       <div class="row">
-        <div class="col-sm-6 mb-sm-40"><a class="gallery"><img :src="product.image" :alt="product.name" /></a></div>
+        <div class="col-sm-6 mb-sm-40">
+          <a class="gallery"><img :src="product?.image" :alt="product?.name" /></a>
+        </div>
         <div class="col-sm-6">
           <div class="row">
             <div class="row mb-20">
               <div class="col-sm-8">
-                <a @click="$router.go(-1)" class="btn btn-lg btn-block btn-round btn-w">{{ $t('back') }}</a>
+                <a @click="$router.go(-1)" class="btn btn-lg btn-block btn-round btn-primary">{{ $t('back') }}</a>
               </div>
             </div>
             <div class="col-sm-12">
-              <h1 class="product-title font-alt">{{ product.name }}</h1>
+              <h1 class="product-title font-alt">{{ product?.name }}</h1>
             </div>
           </div>
           <div class="row mb-20">
             <div class="col-sm-12">
               <div class="price font-alt">
-                <span class="amount">{{ product.price }} {{ $t('currency') }}</span>
+                <span class="amount">{{ product?.price }} {{ $t('currency') }}</span>
               </div>
             </div>
           </div>
           <div class="row mb-20">
             <div class="col-sm-12">
               <div class="description">
-                <p>{{ product.description }}</p>
+                <p>{{ product?.description }}</p>
               </div>
             </div>
           </div>
           <div class="row mb-20">
             <div class="col-sm-8">
-              <a class="btn btn-lg btn-block btn-round btn-b" @click="toggleModal">{{ $t('order_now') }}</a>
+              <a class="btn btn-lg btn-block btn-round btn-success" @click="toggleModal">{{ $t('order_now') }}</a>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Модальное окно -->
     <div v-if="isModalOpen" class="modal-overlay" @click.self="toggleModal">
       <div class="modal-content">
         <contact-form @sendMess="sendMess" />
@@ -48,22 +48,45 @@
 </template>
 
 <script lang="ts" setup>
-import type { IProduct } from '~/types/product';
+import { ref, watch } from 'vue';
+import type { Product } from '~/types/apiResponse';
 import type { IFormData } from '~/types/formData';
-
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
-const productMess = ref({} as IProduct | null);
+const lang = useCookie('lang');
 
-const { data: product, pending, error } = await useFetch<IProduct>(`${runtimeConfig.public.apiBase}products/${route.params.slug}/`);
+const product = ref<Product>();
+const pending = ref(false); // Переменная для отслеживания состояния загрузки
+
+const fetchProduct = async () => {
+  pending.value = true; // Начало загрузки
+  try {
+    const response = await fetch(`${runtimeConfig.public.apiBase}products/${route.params.slug}/?${lang.value ? `lang=${lang.value}` : 'lang=uz'}`);
+    product.value = await response.json();
+  } catch (error) {
+    console.error("Failed to fetch product:", error);
+  } finally {
+    pending.value = false; // Завершение загрузки
+  }
+};
+
+// Следим за изменением языка и обновляем данные
+watch(lang, async () => {
+  await fetchProduct();
+});
+
+// Инициализируем загрузку данных при первом рендере
+await fetchProduct();
 
 const isModalOpen = ref(false);
-
 const toggleModal = () => {
   isModalOpen.value = !isModalOpen.value;
 };
 
+
 const chatIds = runtimeConfig.public.chatId.split(',');
+
+const productMess = ref<Product>();
 
 const sendMess = async (formData: IFormData) => {
   try {
@@ -99,24 +122,5 @@ const sendMess = async (formData: IFormData) => {
     toggleModal();
   }
 };
+
 </script>
-
-<style scoped>
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background-color: #fff;
-  border-radius: 10px;
-  max-width: 90%;
-  height: auto;
-}
-</style>

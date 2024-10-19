@@ -43,7 +43,7 @@ interface Catalog {
     image: string,
 }
 
-interface Product {
+export interface Product {
     url: string,
     name: string,
     slug: string,
