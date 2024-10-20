@@ -36,7 +36,7 @@ interface IApiResponse<T> {
     results: Array<T>;
 }
 
-interface Catalog {
+export interface Category {
     url: string,
     slug: string,
     name: string,
@@ -53,6 +53,6 @@ export interface Product {
 }
 
 
-export interface ICatalog extends IApiResponse<Catalog> {}
+export interface ICategory extends IApiResponse<Category> {}
 
 export interface IProduct extends IApiResponse<Product> {}

@@ -3,8 +3,10 @@
   "about_us": "О нас",
   "services": "Услуги",
   "products": "Продукция",
+  "categories": "Категории",
   "contact": "Контакты",
   "back": "Назад",
+  "close": "Закрыть",
   "welcome_title": "Солнечные электростанции от лучших мировых производителей",
   "company_name": "Beshyogochnur",
   "company_name_1": "ООО \"Beshyogochnur\"",
@@ -40,5 +42,6 @@
   "currency": "Сум",
   "loading": "Загрузка...",
   "order_now": "Заказать сейчас",
-  "map_link": "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d95961.087574095!2d69.163273!3d41.270039!3m2!1i1024!2i768!4f13.1!2m1!1z0JMuINCi0LDRiNC60LXQvdGCLCDQp9C40LvQsNC90LfQsNGA0YHQutC40Lkg0YDQsNC50L7QvSwg0YPQu9C40YbQsCDQp9GD0L_QsNC90LDRgtCwINC0LjYvMg!5e0!3m2!1sru!2skz!4v1729360959854!5m2!1sru!2skz"
+  "map_link": "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d95961.087574095!2d69.163273!3d41.270039!3m2!1i1024!2i768!4f13.1!2m1!1z0JMuINCi0LDRiNC60LXQvdGCLCDQp9C40LvQsNC90LfQsNGA0YHQutC40Lkg0YDQsNC50L7QvSwg0YPQu9C40YbQsCDQp9GD0L_QsNC90LDRgtCwINC0LjYvMg!5e0!3m2!1sru!2skz!4v1729360959854!5m2!1sru!2skz",
+  "order_accepted_message": "Ваш заказ принят. Мы свяжемся с вами в ближайшее время."
 }
