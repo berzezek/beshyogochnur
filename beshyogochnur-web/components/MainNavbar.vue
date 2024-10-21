@@ -33,7 +33,7 @@
           </li>
           <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown">{{
-              $t('products')
+              $t('shop')
             }}</a>
             <ul class="dropdown-menu">
               <li v-for="catalog in catalogs?.results" :key="catalog.name">
