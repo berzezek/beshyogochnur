@@ -2,6 +2,8 @@
   <div>
     <main-section />
 
+    <main-investors />
+
     <main-about />
 
     <hr class="divider-w" />

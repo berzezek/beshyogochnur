@@ -21,6 +21,9 @@
           <li>
             <nuxt-link to="/services">{{ $t('services') }}</nuxt-link>
           </li>
+          <li>
+            <nuxt-link to="/investors">{{ $t('investors') }}</nuxt-link>
+          </li>
           <li class="dropdown" id="shop-cursor">
             <a class="dropdown-toggle" data-toggle="dropdown">{{
               $t('shop')

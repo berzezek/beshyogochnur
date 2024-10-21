@@ -3,15 +3,12 @@
     <main-navbar />
 
     <div class="main">
-      <hr class="divider-w mb-4" />
 
       <slot name="default" />
 
-      <hr class="divider-w" />
 
       <main-contact />
 
-      <hr class="divider-d" />
       <main-footer />
     </div>
     <div class="scroll-up">
