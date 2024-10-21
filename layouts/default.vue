@@ -1,0 +1,21 @@
+<template>
+  <main id="main" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+    <main-navbar />
+
+    <div class="main">
+      <hr class="divider-w mb-4" />
+
+      <slot name="default" />
+
+      <hr class="divider-w" />
+
+      <main-contact />
+
+      <hr class="divider-d" />
+      <main-footer />
+    </div>
+    <div class="scroll-up">
+      <nuxt-link to="/#main"><i class="fa fa-angle-double-up"></i></nuxt-link>
+    </div>
+  </main>
+</template>

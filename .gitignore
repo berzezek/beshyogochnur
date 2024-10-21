@@ -1,74 +1,31 @@
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
-# Local History for Visual Studio Code
-.history/
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
-# Built Visual Studio Code Extensions
-*.vsix
+# Node dependencies
+node_modules
 
-# Исключение системных и скрытых папок
+# Logs
+logs
 *.log
-*.tmp
-*.bak
+
+# Misc
 .DS_Store
-Thumbs.db
-*.swp
-*.lock
-*.pid
-*.log
-*.cache
-*.idea/
-*.vscode/
-*.android/
-*.atom/
-*.idlerc/
-*.oracle_jre_usage/
-*.skiko/
-AppData/
-Contacts/
-Documents/
-Downloads/
-Favorites/
-Links/
-Music/
-OneDrive/
-Pictures/
-Saved Games/
-NTUSER.DAT*
+.fleet
+.idea
 
-# Игнорирование системных папок и файлов
-.android/
-.atom/
-.bash_history
-.gitconfig
-.idlerc/
-.kivy/
-.lesshst
-.node_repl_history
-.oracle_jre_usage/
-.skiko/
-.vscode/
-AppData/
-Contacts/
-Documents/
-Downloads/
-Favorites/
-Links/
-Music/
-NTUSER.DAT*
-OneDrive/
-Pictures/
-Saved Games/
-Searches/
-Videos/
-desktop.ini
-npm-cache/
-*.exe
-*.lnk
-
+# Local env files
 .env
+.env.*
+!.env.example
