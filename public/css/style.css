@@ -2930,3 +2930,7 @@ Google map
     width: 100%;
   }
 }
+
+.bg-sun {
+  background: #f39c12;
+}
