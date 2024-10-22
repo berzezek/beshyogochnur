@@ -13,15 +13,8 @@
         <div class="col-sm-6">
           <div class="widget">
             <h5 class="widget-title font-alt">{{ $t('map_title') }}</h5>
-            <iframe
-              :src="$t('map_link')"
-              width="400"
-              height="300"
-              style="border: 0"
-              allowfullscreen="true"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <iframe :src="$t('map_link')" width="300" height="300" style="border: 0" allowfullscreen="true"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
       </div>
