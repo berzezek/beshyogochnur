@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
           <h2 class="module-title font-alt">{{ $t('about_us') }}</h2>
-          <div class="module-subtitle font-serif large-text">
+          <div class="module-subtitle">
             <span>{{ $t('about_company') }}</span>
             <br /><br />
             <span>{{ $t('about_company_1') }}</span>
