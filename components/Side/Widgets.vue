@@ -8,7 +8,7 @@
         </div>
         <div class="widget-posts-body">
           <div class="widget-posts-title">
-            <a href="#">{{ widget.name }}</a>
+            <nuxt-link :to="`#${widget.name}`">{{ widget.name }}</nuxt-link>
           </div>
         </div>
       </li>

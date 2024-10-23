@@ -19,6 +19,11 @@
 </template>
 
 <style scoped>
+.bg-sun {
+  background-color: #ffbb00cc;
+  color: black;
+}
+
 .color-black {
   color: black;
   margin-bottom: 20px;

@@ -4,10 +4,10 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 col-md-3 sidebar">
-            <side-widgets :widgets="localizedWidgets" />
+            <side-widgets :widgets="services" />
           </div>
           <div class="col-sm-8 col-sm-offset-1">
-            <side-services />
+            <side-services :services="services" />
           </div>
         </div>
       </div>
@@ -24,20 +24,21 @@ if (lang.value) {
   locale.value = lang.value
 }
 
-// Динамическое создание списка виджетов
-const createWidgets = () => [
-  { name: t('service_1_title'), image: "/images/rp-1.jpg", },
-  { name: t('service_2_title'), image: "/images/rp-2.jpg", },
-  { name: t('service_3_title'), image: "/images/rp-3.jpg", },
-  { name: t('service_4_title'), image: "/images/rp-4.jpg", }
+
+
+const createServices = () => [
+  { name: t('service_1_title'), image: "/images/service_1.jpg", text: t('service_1_text') },
+  { name: t('service_2_title'), image: "/images/service_2.jpg", text: t('service_2_text') },
+  { name: t('service_3_title'), image: "/images/service_3.jpg", text: t('service_3_text') },
+  { name: t('service_4_title'), image: "/images/service_4.jpg", text: t('service_4_text') }
 ]
 
 // Локализованный список виджетов
-const localizedWidgets = ref(createWidgets())
+const services = ref(createServices())
 
 // Наблюдение за изменением языка и обновление виджетов
 watch(locale, () => {
-  localizedWidgets.value = createWidgets()
+  services.value = createServices()
 })
 
 // Функция смены языка

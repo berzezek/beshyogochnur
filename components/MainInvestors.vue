@@ -1,5 +1,5 @@
 <template>
-  <section class="module-small bg-primary">
+  <section class="module-small bg-sun">
     <div class="container">
       <div class="row">
         <div class="col-sm-6 col-md-8 col-lg-6 col-lg-offset-2">
@@ -19,6 +19,11 @@
 </template>
 
 <style scoped>
+.bg-sun {
+  background-color: #ffbb00cc;
+  color: black;
+}
+
 .color-black {
   color: black;
   margin-bottom: 20px;

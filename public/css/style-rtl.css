@@ -1177,7 +1177,7 @@ General Styles - Owlcarousel
 --------------------------------------------------------------*/
 .page-loader {
   position: fixed;
-  background: #000;
+  background: #3f3f3f;
   bottom: 0;
   left: 0;
   right: 0;
