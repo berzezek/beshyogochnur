@@ -1,10 +1,7 @@
 <template>
-  <div class="main">
-    <section class="module-small">
-      <div class="container">
-        <side-investors />
-      </div>
-    </section>
-  </div>
+  <section class="module-small">
+    <div class="container">
+      <side-investors />
+    </div>
+  </section>
 </template>
-

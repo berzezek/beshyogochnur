@@ -1,7 +1,7 @@
 <template>
   <div class="post">
     <div class="post-thumbnail">
-      <img src="assets/images/investors.jpg" width="800" alt="Blog Investors" />
+      <img src="/images/investors.jpg" width="800" alt="Blog Investors" />
     </div>
     <div class="post-header font-alt">
       <h1 class="post-title">{{ $t('investors_title') }}</h1>

@@ -11,7 +11,7 @@
           </div>
           <div class="row">
             <div
-              class="mb-sm-20 wow fadeInUp col-sm-6 col-md-3"
+              class="mb-sm-20 wow fadeInUp col-sm-3"
               v-for="catalog in catalogs?.results"
               :key="catalog.name"
             >

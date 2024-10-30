@@ -1,18 +1,16 @@
 <template>
-  <div class="main">
-    <section class="module-small">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-4 col-md-3 sidebar">
-            <side-widgets :widgets="services" />
-          </div>
-          <div class="col-sm-8 col-sm-offset-1">
-            <side-services :services="services" />
-          </div>
+  <section class="module-small">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4 col-md-3 sidebar">
+          <side-widgets :widgets="services" :widget-name="t('services')" @widgetClick="widgetClick"/>
+        </div>
+        <div class="col-sm-8 col-sm-offset-1">
+          <side-services :services="services" />
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script lang="ts" setup>
@@ -45,6 +43,10 @@ watch(locale, () => {
 const changeLanguage = (newLang: string) => {
   locale.value = newLang
   lang.value = newLang
+}
+
+const widgetClick = (name: string) => {
+  navigateTo(`/services/#${name}`)
 }
 
 </script>
