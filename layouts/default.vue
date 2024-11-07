@@ -1,18 +1,13 @@
 <template>
-  <main id="main" data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
-    <main-navbar />
 
-    <div class="main">
+  <main-navbar />
 
-      <slot name="default" />
+  <slot name="default" />
 
+  <main-contact />
 
-      <main-contact />
+  <main-footer />
 
-      <main-footer />
-    </div>
-    <div class="scroll-up">
-      <nuxt-link to="/#main"><i class="fa fa-angle-double-up"></i></nuxt-link>
-    </div>
-  </main>
+  <div class="scroll-up"><a href="#totop"><i class="fa fa-angle-double-up"></i></a></div>
+
 </template>

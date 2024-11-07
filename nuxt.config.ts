@@ -115,6 +115,7 @@ export default defineNuxtConfig({
         { src: '/js/plugins.js' },
         { src: 'https://cdn.jsdelivr.net/npm/dotenv@16.4.5/lib/main.min.js' },
         { src: 'https://unpkg.com/imask' },
+        { src: '/js/main.js' },
         // { src: '/js/main.js' },
         { src: '/js/sendMessage.js' },
         { src: 'https://cdn.jsdelivr.net/npm/sweetalert2@11' },
