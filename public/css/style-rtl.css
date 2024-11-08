@@ -1,6 +1,11 @@
 /*--------------------------------------------------------------
 	Common
 --------------------------------------------------------------*/
+:root {
+  --main-color: #151a3b;
+  --main-color-transparent: rgba(21, 26, 59, 0.9);
+}
+
 html {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -248,7 +253,7 @@ a,
 }
 
 .bg-dark {
-  background: #111;
+  background: var(--main-color);
 }
 
 .bg-dark-30:before {
@@ -1239,7 +1244,7 @@ General Styles - Owlcarousel
 	Navbar
 --------------------------------------------------------------*/
 .navbar-custom {
-  background-color: rgba(34, 34, 34);
+  background-color: var(--main-color);
   border: 0;
   border-radius: 0;
   z-index: 1000;
@@ -1255,7 +1260,7 @@ General Styles - Owlcarousel
 }
 
 .navbar-custom .dropdown-menu {
-  background: rgba(26, 26, 26, 0.9);
+  background: var(--main-color-transparent);
   border-radius: 0;
   border: 0;
   padding: 0;
@@ -2924,4 +2929,12 @@ Google map
   .works-grid-5 .work-item {
     width: 100%;
   }
+}
+
+.bg-dark-80 {
+  background-color: var(--main-color);
+}
+
+nav:hover {
+  background-color: var(--main-color);
 }

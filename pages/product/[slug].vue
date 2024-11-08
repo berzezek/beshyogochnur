@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="catalog-section">
+    <section class="service-section">
       <div class="titan-caption">
         <div class="caption-content">
           <div class="font-alt mb-40 titan-title-size-4 color-orange">
@@ -145,15 +145,6 @@ const sendMess = async (formData: IFormData) => {
 </script>
 
 <style scoped>
-.catalog-section {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.57) 25%, rgba(107, 107, 107, 0.67) 75%),
-    url('/images/catalog_bg.jpg');
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-}
-
-
 .modal-overlay {
   position: fixed;
   top: 0;

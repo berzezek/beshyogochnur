@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top one-page" role="navigation">
+  <nav class="navbar navbar-custom navbar-transparent navbar-fixed-top one-page wow" role="navigation">
     <div class="container">
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse"><span
@@ -117,9 +117,5 @@ const setLanguage = async (newLang: string) => {
 #service-cursor,
 #shop-cursor {
   cursor: pointer;
-}
-
-nav:hover {
-  background-color: rgba(34, 34, 34);
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="home-section home-parallax home-fade bg-dark-30 service-section">
+    <section class="home-section home-parallax home-fade bg-dark service-section">
       <div class="titan-caption">
         <div class="caption-content">
           <div class="font-alt mb-30 titan-title-size-1">{{ $t('ses_project_text') }}</div>
@@ -40,14 +40,3 @@
     </div>
   </div>
 </template>
-
-<style scoped>
-.service-section {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.836) 25%, rgba(34, 34, 34, 0.67) 75%),
-    url('/images/agency/agency_bg.jpg');
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  color: rgba(255, 255, 255, 0.7);
-}
-</style>
