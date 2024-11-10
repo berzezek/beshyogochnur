@@ -2,8 +2,8 @@
   "services_title": "Xizmatlar",
   "services_title_1": "Quyosh energiyasi sohasida keng ko'lamli xizmatlar taklif etamiz",
   "services_intro": "Beshyogochnur kompaniyasi quyosh energiyasi sohasida keng ko'lamli professional xizmatlarni taklif etadi, bu quyosh tizimlari bilan ishlashning barcha bosqichlarini — loyihalashtirishdan tortib, xizmat ko'rsatishgacha qamrab oladi.",
-  "service_1_title": "Energiya xizmatlari",
-  "service_1_text": "Biz quyosh energiyasi tizimlarini to'liq texnik xizmat ko'rsatish, monitoring qilish, ta'mirlash va modernizatsiya qilish xizmatlarini taklif etamiz.",
+  "service_1_title": "SES ta'mirlash",
+  "service_1_text": "Quyosh elektr stansiyalarini tashqi va yer osti ustiga o'rnatish, shuningdek mavjud elektr tarmoqlariga integratsiya qilish.",
   "service_2_title": "Loyiha ishlab chiqish",
   "service_2_text": "Xususiy va tijorat ob'ektlari uchun quyosh elektr stansiyalarini loyihalash.",
   "service_3_title": "SQS ijarasi",
@@ -45,5 +45,16 @@
   "ses_project_priority_5": "5. O'rnatish va ishga tushirish",
   "ses_project_priority_5_text": "Stansiyani o'rnatish, ishlab chiqishni tekshirish va ishga tushirish loyihalash va obyektni ishga tushirishning oxirgi bosqichi. Keyingi SESning xizmat ko'rsatishini odatda loyihalash ishlari amalga oshirgan tashkilot bajaradi. Solergy, har qanday qiyinlik darajadagi loyihalarni amalga oshirishda keng tajribaga ega bo'ldi. Biz mijozlarga faqat uskunalarni emas, balki loyihalashni taklif etamiz va keyingi loyihalashni qo'llab-quvvatlash, shu jumladan: bir nechta kilovattlik kichik mobil SESlar; 5 dan 30 kW gacha o'rtacha darajadagi ob'ektlar; 1 MW va undan ko'p katta sanoat stansiyalari. Bizning quyosh elektr stansiyalarini loyihalash va ishga tushirish vaqti bir necha kunlikdan bir nechaga, SES miqyosiga qarab o'zgaradi. Muhim: professional tekshiruvdan oldin o'zaro o'rnatish, qiyinlik darajasi bo'lmagan tag'ayyurli natijalarga olib kelishi mumkin. Quyosh elektr stansiyalarini loyihalashda, ko'pchilik holatlarda, kafolat va keyingi kafolat xizmati uchun shartnoma tuziladi.",
   "ses_project_priority_6": "6. Monitoring sozlash",
-  "ses_project_priority_6_text": "Bizning menejerlarimiz sizga dasturni o'rnatish va sozlashda yordam beradilar (IOS va Androidda mavjud), kirish uchun login va parol beramiz"
+  "ses_project_priority_6_text": "Bizning menejerlarimiz sizga dasturni o'rnatish va sozlashda yordam beradilar (IOS va Androidda mavjud), kirish uchun login va parol beramiz",
+  "ses_maintenance_title": "Quyosh elektr stansiyalarini o'rnat",
+  "ses_maintenance_text": "Biz quyosh elektr stansiyalarini o'rnatish va kafolatli x",
+  "ses_maintenance_priority": "Panel joylashtirish variantlari",
+  "ses_maintenance_priority_1": "1. Dachali toitda",
+  "ses_maintenance_priority_1_text": "Ugulovchi qo'llab-quvvatlashni qayta ishlab chiqaradigan qo'llab-quvvatlashni ishlatish orqali o'rnatish.",
+  "ses_maintenance_priority_2": "2. Tekis toitda",
+  "ses_maintenance_priority_2_text": "O'rnatish uchun o'zgaruvchan burchakli qo'llab-quvvatlashni ishlatish orqali o'rnatish.",
+  "ses_maintenance_priority_3": "3. Yer ostida",
+  "ses_maintenance_priority_3_text": "Maxsus profil konstruksiyasi ishlatish orqali o'rnatish.",
+  "ses_maintenance_priority_4": "4. Suvda",
+  "ses_maintenance_priority_4_text": "Ponto va maxsus qo'llab-quvvatlashni ishlatish orqali o'rnatish."
 }

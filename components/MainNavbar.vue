@@ -8,9 +8,6 @@
       </div>
       <div class="collapse navbar-collapse" id="custom-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <!-- <li>
-            <nuxt-link to="/#main">{{ $t('main') }}</nuxt-link>
-          </li> -->
           <li>
             <nuxt-link to="/#about">{{ $t('about_us') }}</nuxt-link>
           </li>
@@ -21,13 +18,18 @@
 
             <ul class="dropdown-menu">
               <li>
-                <nuxt-link to="/rental">
-                  {{ $t('service_3_title') }}
+                <nuxt-link to="/maintenance">
+                  {{ $t('service_1_title') }}
                 </nuxt-link>
               </li>
               <li>
                 <nuxt-link to="/project">
                   {{ $t('service_2_title') }}
+                </nuxt-link>
+              </li>
+              <li>
+                <nuxt-link to="/rental">
+                  {{ $t('service_3_title') }}
                 </nuxt-link>
               </li>
             </ul>

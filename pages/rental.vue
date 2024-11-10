@@ -83,14 +83,3 @@
     </div>
   </div>
 </template>
-
-<style>
-.service-section {
-  background: linear-gradient(to bottom, rgba(31, 51, 107, 0.9) 25%, rgba(34, 34, 34, 0.5) 75%),
-    url('/images/agency/agency_bg.jpg');
-  height: 600px;
-  background-size: cover;
-  background-position: center;
-  color: rgba(255, 255, 255, 0.7);
-}
-</style>

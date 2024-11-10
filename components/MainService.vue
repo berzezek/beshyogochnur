@@ -10,8 +10,8 @@
             <h1 class="post-title">{{ $t('services_title_1') }}</h1>
           </div>
           <div v-for="service in services" :key="service.name" class="post-entry mb-40">
-            <div class="panel panel-default">
-              <div class="panel-heading">
+            <div class="panel panel-default service-pointer">
+              <div class="panel-heading service-pointer" @click="navigateTo(service.to)">
                 <h4 class="panel-title font-alt">{{ service.name }}</h4>
               </div>
               <div class="panel-body">{{ service.text }}</div>
@@ -28,7 +28,7 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-  services: { name: string; image: string; text: string }[]
+  services: { name: string; image: string; text: string, to: string }[]
 }>()
 </script>
 
@@ -72,5 +72,9 @@ const props = defineProps<{
   padding: 15px;
   font-size: 1em;
   color: #555;
+}
+
+.service-pointer {
+  cursor: pointer;
 }
 </style>

@@ -2,8 +2,8 @@
   "services_title": "Services",
   "services_title_1": "We offer a wide range of services in the field of solar energy",
   "services_intro": "Beshyogochnur offers a wide range of professional services in the field of solar energy, covering all stages of working with solar systems — from design to maintenance.",
-  "service_1_title": "Energy services",
-  "service_1_text": "We offer comprehensive maintenance and support for solar energy systems, including monitoring, technical maintenance, repair, and equipment upgrades.",
+  "service_1_title": "Maintenance of SES",
+  "service_1_text": "Installation of solar power stations on roofs and land, as well as integration with existing power grids.",
   "service_2_title": "Design",
   "service_2_text": "Creating individual solar power station projects for private and commercial properties.",
   "service_3_title": "SQS rental",
@@ -44,5 +44,16 @@
   "ses_project_priority_5": "5. Installation and commissioning",
   "ses_project_priority_5_text": "Installation, checking the operability, and commissioning of the station are the final stage of designing and putting the facility into operation. Subsequent maintenance of the SES is usually carried out by the same organization that performed the design work. Solergy has accumulated significant experience in implementing projects of varying complexity. We are ready to offer customers not only any equipment but also project development with subsequent project support, including: small mobile SESs for several kilowatts; medium-performance facilities from 5 to 30 kW; large industrial stations up to 1 MW and more. In terms of time, the design and commissioning of our solar power stations take from two days to several months, depending on the scale of the SES. Important: self-installation without prior professional inspection can lead to unpredictable consequences, including the likelihood of structure collapse. When designing solar power stations, in most cases, a Contract for warranty and post-warranty maintenance is concluded.",
   "ses_project_priority_6": "6. Monitoring setup",
-  "ses_project_priority_6_text": "Our managers will help you install and configure the application (available on both IOS and Android), provide you with a login and password for entry"
+  "ses_project_priority_6_text": "Our managers will help you install and configure the application (available on both IOS and Android), provide you with a login and password for entry",
+  "ses_maintenance_title": "Installation and maintenance of solar power stations",
+  "ses_maintenance_text": "We provide a full range of services for the installation and warranty maintenance of solar power stations",
+  "ses_maintenance_priority": "Panel placement options",
+  "ses_maintenance_priority_1": "1. On a sloping roof",
+  "ses_maintenance_priority_1_text": "Installation using mounts that repeat its slope angle.",
+  "ses_maintenance_priority_2": "2. On a flat roof",
+  "ses_maintenance_priority_2_text": "Installation using mounts with an adjustable angle.",
+  "ses_maintenance_priority_3": "3. On the ground",
+  "ses_maintenance_priority_3_text": "Installation using a special profiled structure.",
+  "ses_maintenance_priority_4": "4. On the water",
+  "ses_maintenance_priority_4_text": "Installation using a pontoon and special mounts."
 }
