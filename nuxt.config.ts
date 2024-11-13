@@ -14,7 +14,10 @@ export default defineNuxtConfig({
     },
   },
   ssr: true,
-  modules: ['@nuxtjs/i18n'],
+  modules: [
+    '@nuxtjs/i18n',
+    'nuxt-og-image',
+  ],
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   runtimeConfig: {
@@ -116,7 +119,6 @@ export default defineNuxtConfig({
         { src: 'https://cdn.jsdelivr.net/npm/dotenv@16.4.5/lib/main.min.js' },
         { src: 'https://unpkg.com/imask' },
         { src: '/js/main.js' },
-        // { src: '/js/main.js' },
         { src: '/js/sendMessage.js' },
         { src: 'https://cdn.jsdelivr.net/npm/sweetalert2@11' },
         { src: '/alertifyjs/alertify.min.js' },
