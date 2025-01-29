@@ -28,7 +28,7 @@
               <div class="col-sm-12">
                 <div class="price font-alt">
                   <span class="amount">
-                    {{ product?.price }} {{ $t('currency') }}
+                    {{ prettyPrice(product?.price) }}
                   </span>
                 </div>
               </div>
@@ -99,6 +99,15 @@ const fetchProduct = async () => {
   } finally {
     pending.value = false;
   }
+};
+
+const prettyPrice = (price: number | undefined) => {
+  if (!price) return '';
+  return new Intl.NumberFormat('ru-RU', {
+    style: 'currency',
+    currency: 'UZS',
+    minimumFractionDigits: 0,
+  }).format(price);
 };
 
 watch(lang, async () => {
