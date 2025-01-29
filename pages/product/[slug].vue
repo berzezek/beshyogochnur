@@ -43,11 +43,14 @@
             <div class="row mb-20">
               <div class="col-sm-12">
                 <div class="description">
-                  <p>{{ `${$t('manufacturer')} - ${product?.manufactures}` }}</p>
+                  <p v-if="product?.manufactures">{{ `${$t('manufacturer')} - ${product?.manufactures}` }}</p>
                 </div>
               </div>
             </div>
             <div class="col-sm-12 buttons-container">
+              <a :href="product?.pdf" target="_blank" v-if="product?.pdf" class="btn btn-lg btn-round btn-warning">
+                {{ $t('view_docs') }}
+              </a>
               <a class="btn btn-lg btn-round btn-success" @click="toggleModal">
                 {{ $t('order_now') }}
               </a>
@@ -60,23 +63,28 @@
       </div>
       <div v-if="isModalOpen" class="modal-overlay" @click.self="toggleModal">
         <div class="modal-content">
-          <contact-form @sendMess="sendMess" id="sendMess" />
+          <contact-form :product="product" :isOpen="isModalOpen" @close="toggleModal" />
         </div>
       </div>
+
     </section>
   </div>
 </template>
 
 <script lang="ts" setup>
 import type { Product } from '~/types/apiResponse';
-import type { IFormData } from '~/types/formData';
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
-const router = useRouter();
 const lang = useCookie('lang');
 
 const product = ref<Product>();
 const pending = ref(false);
+
+const isModalOpen = ref(false);
+
+const toggleModal = () => {
+  isModalOpen.value = !isModalOpen.value;
+};
 
 const fetchProduct = async () => {
   pending.value = true;
@@ -99,49 +107,7 @@ watch(lang, async () => {
 
 await fetchProduct();
 
-const isModalOpen = ref(false);
-const toggleModal = () => {
-  isModalOpen.value = !isModalOpen.value;
-  if (isModalOpen.value) {
-    router.push('#sendMess');
-  }
-};
 
-const chatIds = runtimeConfig.public.chatId.split(',');
-
-const productMess = ref<Product>();
-
-const sendMess = async (formData: IFormData) => {
-  try {
-    productMess.value = product.value;
-    const message = `Информация о заказе:\n\tИмя: ${formData.userName
-      }\n\tEmail: ${formData.email}\n\tТелефон: ${formData.phone
-      }\n\tСообщение: ${formData.message}\n\tПродукт: ${productMess.value && productMess.value.name
-        ? productMess.value.name
-        : ''
-      }`;
-
-    for (let i = 0; i < chatIds.length; i++) {
-      await fetch(
-        `https://api.telegram.org/bot${runtimeConfig.public.telegramToken}/sendMessage`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            chat_id: chatIds[i],
-            text: message,
-          }),
-        }
-      );
-    }
-  } catch (error) {
-    console.error('Failed to send message:', error);
-  } finally {
-    setTimeout(() => {
-      toggleModal();
-    }, 3000);
-  }
-};
 </script>
 
 <style scoped>

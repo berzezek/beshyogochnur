@@ -135,4 +135,9 @@ export default defineNuxtConfig({
       cookieKey: 'lang',
     },
   },
+  site: {
+    url: 'https://beshyogochnur.uz',
+    name: 'Besh Yogoch Nur',
+    routes: ['/', '/products', '/about', '/contact'],
+  }
 });

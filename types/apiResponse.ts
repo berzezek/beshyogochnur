@@ -10,6 +10,7 @@ export interface Category {
     slug: string,
     name: string,
     image: string,
+    thumbnail: string
 }
 
 export interface Product {
@@ -20,7 +21,9 @@ export interface Product {
     slug: string,
     description: string,
     image: string,
-    price: number
+    thumbnail: string,
+    price: number,
+    pdf: string,
 }
 
 export interface Manufacter {
@@ -28,10 +31,10 @@ export interface Manufacter {
 }
 
 
-export interface ICategory extends IApiResponse<Category> {}
+export interface ICategory extends IApiResponse<Category> { }
 
-export interface IProduct extends IApiResponse<Product> {}
+export interface IProduct extends IApiResponse<Product> { }
 
 export interface IManufacter extends IApiResponse<Manufacter> {
-  name: any;
+    name: any;
 }

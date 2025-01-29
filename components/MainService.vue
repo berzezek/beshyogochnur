@@ -28,8 +28,8 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-  services: { name: string; image: string; text: string, to: string }[]
-}>()
+    services: { name: string; image: string; text: string, to: string }[]
+  }>()
 </script>
 
 <style scoped>
