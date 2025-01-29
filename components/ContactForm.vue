@@ -34,7 +34,8 @@
               <button class="btn btn-block btn-round btn-d" type="submit">
                 {{ $t('send') }}
               </button>
-              <button class="btn btn-block btn-round btn-secondary mt-20" type="button" @click="closeModal">
+              <button class="btn btn-block btn-round btn-secondary mt-20" type="button" @click="closeModal"
+                v-if="props.isOpen">
                 {{ $t('close') }}
               </button>
             </div>
@@ -46,11 +47,13 @@
 </template>
 
 <script lang="ts" setup>
+import Swal from 'sweetalert2';
+
 const { t } = useI18n();
 
 const props = defineProps({
   product: { type: Object, required: false },
-  isOpen: { type: Boolean, required: true }, // Получаем состояние модалки
+  isOpen: { type: Boolean, required: true },
 });
 
 const emit = defineEmits(["close"]); // Создаём событие для закрытия
@@ -86,7 +89,14 @@ const sendMess = async () => {
       );
     }
 
-    alert(t('message_sent'));
+    Swal.fire({
+      title: t('message_sent_title'),
+      text: t('message_sent'),
+      icon: 'success',
+      confirmButtonText: 'OK',
+      timer: 10000,
+      timerProgressBar: true
+    });
 
     // Очищаем форму
     formData.value = { userName: '', email: '', phone: '', message: '' };

@@ -13,7 +13,7 @@
     <main-investors />
     <main-hr />
 
-    <contact-form />
+    <contact-form :isOpen="isModalOpen" />
   </div>
 
 </template>
@@ -21,6 +21,9 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
 const lang = useCookie('lang')
+
+const isModalOpen = ref(false);
+
 
 // Инициализация с текущим языком из куки или дефолтным значением
 if (lang.value) {
