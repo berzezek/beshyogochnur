@@ -12,7 +12,7 @@
     <div v-if="pending" class="loader-overlay">
       <div class="loader"></div>
     </div>
-    <section class="module-small">
+    <section class="module-small" id="catalog">
       <div class="container">
         <form class="row">
           <div class="col-sm-6 mb-sm-20">
@@ -36,20 +36,23 @@
     <section class="module-small">
       <div class="container">
         <div class="row multi-columns-row">
-          <div class="col-sm-6 col-md-3 col-lg-3" v-for="product in products?.results" :key="product.name">
+          <div class="col-sm-6 col-md-3 col-lg-3" v-for="product in products?.results" :key="product.id">
             <div class="shop-item" @click="productDetail(product.slug)">
               <div class="shop-item-image">
-                <img :src="product.image" :alt="product.name" />
+                <img :src="product.image" :alt="product.name" class="product-image" />
                 <div class="shop-item-detail">
                   <a class="btn btn-round btn-b">
                     <span class="">{{ $t('more') }}</span>
                   </a>
                 </div>
               </div>
-              <h4 class="shop-item-title font-alt">
-                <a href="#">{{ product.name }}</a>
-              </h4>
-              {{ product.price }} {{ $t('currency') }}
+              <div class="shop-item-content">
+                <h4 class="shop-item-title font-alt">
+                  <a href="#">{{ product.name }}</a>
+                </h4>
+                <p class="product-description">{{ product.description }}</p>
+                <p class="product-price">{{ prettyPrice(product.price) }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -69,6 +72,8 @@
 
 <script lang="ts" setup>
 import type { IProduct, Category, Manufacter } from '~/types/apiResponse';
+import { prettyPrice } from '~/utils';
+
 const { t, locale } = useI18n();
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
@@ -153,7 +158,7 @@ const onManufacterChange = async (event: Event) => {
 };
 
 const productDetail = (slug: string) => {
-  router.push(`/product/${slug}`);
+  router.push(`/product/${slug}/#product`);
 };
 
 watch(
@@ -241,4 +246,65 @@ onMounted(async () => {
     transform: rotate(360deg);
   }
 }
+
+.product-image {
+  width: 100%;
+  height: 200px;
+}
+
+/* Карточка товара занимает всю высоту */
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Карточка товара */
+.shop-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #f8f9fa; /* Светло-серый фон */
+  border-radius: 8px; /* Скругленные углы */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Мягкая тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация */
+  padding: 15px;
+}
+
+/* При наведении карточка увеличивается и тень становится глубже */
+.shop-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Контент карточки */
+.shop-item-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Описание товара занимает всю доступную высоту */
+.product-description {
+  flex-grow: 1;
+  color: #5c5c5c; /* Серый цвет текста */
+}
+
+/* Цена всегда внизу */
+.product-price {
+  margin-top: auto;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Картинка товара */
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
 </style>

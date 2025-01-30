@@ -45,7 +45,7 @@
 
             <ul class="dropdown-menu">
               <li v-for="catalog in catalogs" :key="catalog.name">
-                <nuxt-link @click="navigateTo(`/catalog/${catalog.slug}`)">
+                <nuxt-link @click="navigateTo(`/catalog/${catalog.slug}/#catalog`)">
                   {{ catalog.name }}
                 </nuxt-link>
               </li>

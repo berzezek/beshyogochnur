@@ -6,6 +6,7 @@ export interface IApiResponse<T> {
 }
 
 export interface Category {
+    id: number,
     url: string,
     slug: string,
     name: string,
@@ -14,6 +15,7 @@ export interface Category {
 }
 
 export interface Product {
+    id: number,
     url: string,
     name: string,
     category: string,
@@ -27,6 +29,7 @@ export interface Product {
 }
 
 export interface Manufacter {
+    id: number,
     name: string,
 }
 

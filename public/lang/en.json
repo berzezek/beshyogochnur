@@ -44,6 +44,7 @@
   "view_docs": "View Documentation",
   "message_sent_title": "Message sent",
   "message_sent": "We will contact you shortly.",
+  "description": "Description",
   "map_link": "https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d95961.087574095!2d69.163273!3d41.270039!3m2!1i1024!2i768!4f13.1!2m1!1z0JMuINCi0LDRiNC60LXQvdGCLCDQp9C40LvQsNC90LfQsNGA0YHQutC40Lkg0YDQsNC50L7QvSwg0YPQu9C40YbQsCDQp9GD0L_QsNC90LDRgtCwINC0LjYvMg!5e0!3m2!1sen!2skz!4v1729361304929!5m2!1sen!2skz",
   "order_accepted_message": "Your order has been accepted. We will contact you shortly.",
   "error_404": "Page not found",

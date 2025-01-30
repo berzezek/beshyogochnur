@@ -9,7 +9,7 @@
         </div>
       </div>
     </section>
-    <section class="module">
+    <section class="module" id="product">
       <div class="container">
         <div class="row">
           <div class="col-sm-6 mb-sm-40">
@@ -40,11 +40,24 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-20">
-              <div class="col-sm-12">
-                <div class="description">
-                  <p v-if="product?.manufactures">{{ `${$t('manufacturer')} - ${product?.manufactures}` }}</p>
+            <div class="post-entry" v-if="product?.description">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title font-alt">
+                    {{ $t('description') }}
+                  </h4>
                 </div>
+                <div class="panel-body">{{ product?.description }}</div>
+              </div>
+            </div>
+            <div class="post-entry" v-if="product?.manufactures">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title font-alt">
+                    {{ $t('manufacturer') }}
+                  </h4>
+                </div>
+                <div class="panel-body">{{ product?.manufactures }}</div>
               </div>
             </div>
             <div class="col-sm-12 buttons-container">
@@ -73,6 +86,7 @@
 
 <script lang="ts" setup>
 import type { Product } from '~/types/apiResponse';
+import { prettyPrice } from '~/utils';
 const runtimeConfig = useRuntimeConfig();
 const route = useRoute();
 const lang = useCookie('lang');
@@ -99,15 +113,6 @@ const fetchProduct = async () => {
   } finally {
     pending.value = false;
   }
-};
-
-const prettyPrice = (price: number | undefined) => {
-  if (!price) return '';
-  return new Intl.NumberFormat('ru-RU', {
-    style: 'currency',
-    currency: 'UZS',
-    minimumFractionDigits: 0,
-  }).format(price);
 };
 
 watch(lang, async () => {
