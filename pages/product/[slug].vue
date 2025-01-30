@@ -14,7 +14,7 @@
         <div class="row">
           <div class="col-sm-6 mb-sm-40">
             <a class="gallery">
-              <img :src="product?.image" :alt="product?.name" />
+              <img :src="product?.image" :alt="product?.name" class="product-image" />
             </a>
           </div>
           <div class="col-sm-6">
@@ -33,13 +33,6 @@
                 </div>
               </div>
             </div>
-            <div class="row mb-20">
-              <div class="col-sm-12">
-                <div class="description">
-                  <p>{{ product?.description }}</p>
-                </div>
-              </div>
-            </div>
             <div class="post-entry" v-if="product?.description">
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -47,7 +40,7 @@
                     {{ $t('description') }}
                   </h4>
                 </div>
-                <div class="panel-body">{{ product?.description }}</div>
+                <div class="panel-body description">{{ product?.description }}</div>
               </div>
             </div>
             <div class="post-entry" v-if="product?.manufactures">
@@ -57,7 +50,7 @@
                     {{ $t('manufacturer') }}
                   </h4>
                 </div>
-                <div class="panel-body">{{ product?.manufactures }}</div>
+                <div class="panel-body description">{{ product?.manufactures }}</div>
               </div>
             </div>
             <div class="col-sm-12 buttons-container">
@@ -155,5 +148,20 @@ await fetchProduct();
   .buttons-container {
     flex-direction: column;
   }
+}
+
+.product-image {
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  height: auto;
+}
+
+.product-image:hover {
+  transform: scale(1.1);
+}
+
+.description {
+  font-size: 14px;
+  font-weight: bold;
 }
 </style>
